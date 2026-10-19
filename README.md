@@ -1,4 +1,4 @@
-# Bildvereinfacher · Image Simplifier
+# Image Simplifier
 
 A small Java command line tool that makes PNG files smaller by merging similar colors into one shared color (**color quantization**).
 
@@ -17,11 +17,19 @@ Fewer distinct colors means the image can be saved as an indexed PNG, which ofte
 ## Usage
 
 ```bash
-javac BildVereinfacher.java
-java BildVereinfacher <input> <output.png> [tolerance]
+javac ImageSimplifier.java
+java ImageSimplifier <input> <output.png> [tolerance]
 
 # example
-java BildVereinfacher photo.jpg small.png 32
+java ImageSimplifier graphic.png small.png 32
+```
+
+```
+Image:     200 x 100 pixels
+Tolerance: 32
+Colors:    20000  ->  22
+File size: 56,296 bytes  ->  1,239 bytes  (97.8 % saved)
+Saved to:  small.png
 ```
 
 `tolerance` is the allowed color distance (0 to 255, default 32):
